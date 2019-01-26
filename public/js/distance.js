@@ -1,5 +1,7 @@
 $(document).ready(function() {
         // add input listeners
+
+
         google.maps.event.addDomListener(window, 'load', function () {
             var from_places = new google.maps.places.Autocomplete(document.getElementById('from_places'));
             var to_places = new google.maps.places.Autocomplete(document.getElementById('to_places'));
@@ -70,6 +72,45 @@ $(document).ready(function() {
                     $('#duration_value').text(duration_value);
                     $('#from').text(origin);
                     $('#to').text(destination);
+                    ///calculate the rates here:
+                    
+                    
+                    var servicefee = $("#price").val();
+                    console.log(servicefee);
+                    $('#servicefee').text(servicefee);
+                    var driverfee;
+                    var totalfee;
+                    if (distance_in_kilo >= 25) {
+                        driverfee= 70;
+                        $('#driverfee').text(driverfee);
+                     }  else if (distance_in_kilo > 2 ) {
+                        driverfee= 40;
+                        $('#driverfee').text(driverfee);
+                     }
+                   
+
+                    else
+                    {
+                      driverfee= 'free';
+                    $('#driverfee').text(driverfee);
+                           
+                    }
+                       
+
+                     if (driverfee == 'free'){
+                      totalfee = servicefee;  
+                      $('#totalfee').text(totalfee);  
+                     }
+                     else {
+
+                    var totalfee = parseInt(driverfee) + parseInt(servicefee);
+                   // $('#totalfee').text(totalfee);
+                   console.log(totalfee);
+                    document.getElementById("totalfee").innerHTML = totalfee;
+  
+                     }
+
+            document.getElementById("result").style.display = "block";
                 }
             }
         }

@@ -43,10 +43,15 @@
   <p> Address :{{$girl->address1}}</p>
   <p>Speciality : {{$girl->speciality}}</p>
   <p>Contact No :{{$girl->price}}"  </p>
+
+  <input id="price" name="price"  type="hidden" value="{{$girl->price}}" />
+  <input id="destination" name="destination" required type="hidden" />
+  <input id="destination" name="destination" required type="hidden" />
+
    
 <hr>
 <form id="distance_form">
-<div class="form-group"><label>Origin: </label> <input class="form-control" id="from_places" placeholder="Enter Pickup location" /> <input id="origin" name="origin" required="" type="hidden" /></div>
+<div class="form-group"><label>Origin: </label> <input class="form-control" id="from_places" placeholder="Enter Pickup location" required /> <input id="origin" name="origin" required="" type="hidden" /></div>
 
 <div class="form-group"><label>Destination: </label> <input class="form-control" id="to_places" value="{{ $girl->address1 }}" disabled /> <input id="destination" name="destination" required type="hidden" /></div>
 <input class="btn btn-primary" type="submit" value="Calculate" /></form>
@@ -70,7 +75,22 @@
 
   <li class="list-group-item d-flex justify-content-between align-items-center">TO:
   <span id="to" class="badge badge-primary badge-pill"></span></li>
+
+
+<li class="list-group-item d-flex justify-content-between align-items-center">Service Fee:
+<span id="servicefee" class="badge badge-primary badge-pill"></span></li>
+
+<li class="list-group-item d-flex justify-content-between align-items-center">Driver fee:
+<span id="driverfee" class="badge badge-primary badge-pill"></span></li>
+
+
+<li class="list-group-item d-flex justify-content-between align-items-center">Total Fee:
+<span id="totalfee" class="badge badge-primary badge-pill"></span></li>
+
+
 </ul>
+
+ <button class="btn btn-success btn-large" type="submit">Place Order</button>
 </div>
 
 
