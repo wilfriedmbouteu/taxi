@@ -1,0 +1,95 @@
+<!--Top Bar-->
+<div class="top-bar bg-color">
+    <div class="container">
+        <span>My Portfolio</span>
+        <a href="#" data-activates="slide-out" class="button-collapse hide-on-large-only right"><i class="fa fa-bars" aria-hidden="true"></i></a>
+    </div>
+</div>
+<div class="container portfolio">
+    <!--portfolio menu-->
+    <ul class="tabs">
+        <li class="tab"><a>ALL</a></li>
+        <li class="tab"><a>PHOTOSHOP</a></li>
+        <li class="tab"><a>HTML&CSS</a></li>
+        <li class="tab"><a>PHP</a></li>
+        <li class="tab"><a>DESIGN</a></li>
+    </ul>
+    <!--portfolio content-->
+    <div class="card-panel portfolio-container" id="portfolio">
+        <div class="portfolio-content">
+            <div class="row">
+                <div class="col-md-6">
+                    <img alt="" src="images/portfolio-4.html" class="materialboxed">
+                </div>
+                <div class="col-md-6">
+                    <img alt="" src="images/portfolio-5.html" class="materialboxed">
+                </div>
+                <div class="col-md-6">
+                    <img alt="" src="images/portfolio-1.html" class="materialboxed">
+                </div>
+                <div class="col-md-6">
+                    <img alt="" src="images/portfolio-4.html" class="materialboxed">
+                </div>
+                <div class="col-md-6">
+                    <img alt="" src="images/portfolio-6.html" class="materialboxed">
+                </div>
+                <div class="col-md-6">
+                    <img alt="" src="images/portfolio-5.html" class="materialboxed">
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-content">
+            <div class="row">
+                <div class="col-md-6">
+                    <img alt="" src="images/portfolio-5.html" class="materialboxed">
+                </div>
+                <div class="col-md-6">
+                    <img alt="" src="images/portfolio-6.html" class="materialboxed">
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-content">
+            <div class="row">
+               <div class="col-md-6">
+                    <img alt="" src="images/portfolio-6.html" class="materialboxed">
+                </div>
+                <div class="col-md-6">
+                    <img alt="" src="images/portfolio-1.html" class="materialboxed">
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-content">
+            <div class="row">
+               <div class="col-md-6">
+                    <img alt="" src="images/portfolio-6.html" class="materialboxed">
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-content">
+            <div class="row">
+                <div class="col-md-6">
+                    <img alt="" src="images/portfolio-4.html" class="materialboxed">
+                </div>
+                <div class="col-md-6">
+                    <img alt="" src="images/portfolio-6.html" class="materialboxed">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<script>
+    // portfolio tab setting
+    $(".portfolio-content").hide();
+    $(".portfolio-content:first").show();
+
+    $(".portfolio  ul.tabs li.tab").on("click", function () {
+        var index = $(this).index();
+        $(".portfolio-content").slideUp();
+        $(".portfolio-content:eq(" + index + ")").slideDown();
+    });
+    
+    $('ul.tabs').tabs();
+    $('.materialboxed').materialbox();
+</script>
